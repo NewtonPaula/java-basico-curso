@@ -1,7 +1,9 @@
+import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 public class ContaBanco {
     public static void main(String[] args) throws Exception {
+        try{
         Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
 
         System.out.println("digite o seu nome completo:");
@@ -17,6 +19,12 @@ public class ContaBanco {
         System.out.println("Numero da sua agencia é " + agencia);
         System.out.println("Numero da sua conta é " + conta);
         System.out.println("Seu saldo disponivel é de " + saldo); 
+        scanner.close();
+        }
+        catch(InputMismatchException e){
+            System.out.println("o campo numero da conta é numerico");
+        }
+
 
     }
 }
